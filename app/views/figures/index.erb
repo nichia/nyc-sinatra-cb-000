@@ -1,0 +1,12 @@
+<!-- figures/index -->
+
+<h2>NYC Historical Figures</h2>
+
+<ul>
+  <% @figures.each do |figure| %>
+    <li>
+      <p><a href="/figures/<%= figure.id %>"</a><%= figure.name %></p>
+    </li>
+  <% end %>
+</ul>
+<p><a href="/figures/new">Create New Figure</a></p>

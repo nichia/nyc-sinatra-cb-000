@@ -1,6 +1,27 @@
+<!-- landmarks/index -->
 <h2>All Historical Landmarks</h2>
 
 <!-- add content here -->
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Year Completed</th>
+    <th>Figure</th>
+  </tr>
+  <% @landmarks.each do |landmark| %>
+    <tr>
+      <td><a href="/landmarks/<%= landmark.id %>"</a><%= landmark.name %></td>
+      <td><%= landmark.year_completed %></td>
+
+      <% if landmark.figure_id %>
+        <td><%= landmark.figure.name %></td>
+      <% else %>
+        <td> - </td>
+      <% end %>
+    </tr>
+  <% end %>
+<table>
 
 <a class="button" href="/figures">Figures</a>
 <a class="button" href="/">Home</a>

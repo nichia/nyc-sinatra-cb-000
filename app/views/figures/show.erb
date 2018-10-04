@@ -1,0 +1,22 @@
+<!-- figures/show -->
+
+<h2>NYC Historic Figures: <%= @figure.name %></h2>
+
+<h2>Name: <%= @figure.name %></h2>
+
+<h2>Titles</h2>
+<ul>
+  <% @figure.titles.each do |title| %>
+    <li><%= title.name %></li>
+  <% end %>
+</ul>
+
+<h2>Landmarks</h2>
+<ul>
+  <% @figure.landmarks.each do |landmark| %>
+    <li><a href="/landmarks/<%= landmark.id %>"><%= landmark.name %></a></li>
+  <% end %>
+</ul>
+
+<!-- Link to Edit -->
+<p><a href="/figures/<%= @figure.id %>/edit">Edit Figure</a> or Return to <a href="/figures">Figures Index</a></p>
